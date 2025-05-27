@@ -35,37 +35,38 @@ const Navbar = () => {
         </div>
 
         {/* Nav Links */}
-        <nav className="flex space-x-6 text-sm font-medium">
-          <div className="relative group">
+        <nav className="flex space-x-6 text-lg font-medium">
+          {/* <div className="relative group">
             <a href="#" className="text-black hover:text-red-500">
               Home
             </a>
-            <div className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-red-500"></div>
-          </div>
+            <div className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-green-900"></div>
+          </div> */}
           <div className="relative group">
-            <a href="#" className="text-black hover:text-red-500">
+            <a href="#" className="text-green-800 hover:text-black">
               Shop
             </a>
+            <div className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-green-900"></div>
           </div>
-          <a href="#" className="text-black hover:text-red-500">
+          <a href="#" className="text-green-800 hover:text-black">
             Hand Care
           </a>
-          <a href="#" className="text-black hover:text-red-500">
+          <a href="#" className="text-green-800 hover:text-black">
             Pain & Fever
           </a>
-          <a href="#" className="text-black hover:text-red-500">
+          <a href="#" className="text-green-800 hover:text-black">
             Vitamins
           </a>
           <div className="relative group">
-            <a href="#" className="text-black hover:text-red-500">
+            <a href="#" className="text-green-800 hover:text-black">
               Pages
             </a>
           </div>
-          <a href="#" className="text-black hover:text-red-500">
+          <a href="#" className="text-green-800 hover:text-black">
             News
           </a>
           <div className="relative group">
-            <a href="#" className="text-black hover:text-red-500">
+            <a href="#" className="text-green-800 hover:text-black">
               Blog
             </a>
           </div>
