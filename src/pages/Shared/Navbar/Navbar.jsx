@@ -1,5 +1,7 @@
 import React from 'react';
-
+import { FaCartPlus } from "react-icons/fa";
+import { GoPeople } from "react-icons/go";
+import logo from "../../../../src/assets/logo.png"
 const Navbar = () => {
     return (
         <div>
@@ -27,12 +29,18 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="flex items-center justify-between px-6 py-4">
+      <div className="flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="text-3xl text-red-500 font-bold">➕</div>
-          <span className="text-2xl font-semibold">Farmacie</span>
-        </div>
+  <div>
+    <img className="h-16 w-16" src={logo} alt="" />
+  </div>
+  <div className="flex flex-col">
+    <span className="text-2xl font-semibold">Modern Homeo Pharmacy</span>
+    <span className="text-left">Saidpur</span>
+  </div>
+</div>
+
 
         {/* Nav Links */}
         <nav className="flex space-x-6 text-lg font-medium">
@@ -74,9 +82,9 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="flex items-center space-x-6 text-2xl text-gray-700">
-          <span className="cursor-pointer">🤍</span>
-          <span className="cursor-pointer">🛒</span>
-          <span className="cursor-pointer">👤</span>
+           
+          <span className="cursor-pointer"><FaCartPlus className='text-black hover:text-green-700'/></span>
+          <span className="cursor-pointer"><GoPeople className='text-green-700 hover:text-black'/></span>
         </div>
       </div>
     </div>
