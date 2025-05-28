@@ -5,7 +5,7 @@ import logo from "../../../../src/assets/logo.png"
 const Navbar = () => {
     return (
         <div>
-          <div className="w-full border-b">
+          <div className="w-full border-b"  style={{ fontFamily: "Parkinsans, serif", fontWeight: 400 }}>
       {/* Top Alert Bar */}
       <div className="flex items-center justify-between bg-white px-6 py-2 text-sm border-b">
         <div className="flex items-center space-x-4">
