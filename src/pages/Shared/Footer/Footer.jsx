@@ -23,7 +23,7 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col">
                             <span className="text-xl md:text-2xl font-semibold">
-                                Modern Homeo Pharmacy
+                                Modern <br />Homeo Pharmacy
                             </span>
                         </div>
                     </div>
