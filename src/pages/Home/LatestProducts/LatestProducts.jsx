@@ -51,11 +51,11 @@ const LatestProducts = () => {
         Latest products
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 ">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white border rounded shadow-md p-2 relative flex flex-col h-full"
+            className="bg-white border rounded-xl shadow-md p-2 relative flex flex-col h-full"
           >
             <span className="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr rounded-bl z-10">
               {product.discount}
