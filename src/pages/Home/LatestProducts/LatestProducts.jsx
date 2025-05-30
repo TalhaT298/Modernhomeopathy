@@ -1,158 +1,105 @@
 import React from "react";
-import card1 from "../../../../src/assets/card1.webp"
-import card2 from "../../../../src/assets/card2.webp"
+import card1 from "../../../../src/assets/card5.webp";
+import card2 from "../../../../src/assets/card2.webp";
+import card3 from "../../../../src/assets/card3.webp";
+import card4 from "../../../../src/assets/card4.webp";
 
 const LatestProducts = () => {
+  const products = [
+    {
+      id: 1,
+      image: card1,
+      discount: "-13%",
+      title: "Himalaya Baby Body Lotion 400 ml Pack Of 2",
+      rating: 5,
+      originalPrice: "$9.20",
+      discountedPrice: "$8",
+    },
+    {
+      id: 2,
+      image: card2,
+      discount: "-14%",
+      title: "mCaffeine Deep Moisturization Body Butter",
+      rating: 5,
+      originalPrice: "$10.50",
+      discountedPrice: "$9",
+    },
+    {
+      id: 3,
+      image: card3,
+      discount: "-10%",
+      title: "Liveasy Diabetic Protein - Sugar Management",
+      rating: 4,
+      originalPrice: "$5",
+      discountedPrice: "$4.50",
+    },
+    {
+      id: 4,
+      image: card4,
+      discount: "-10%",
+      title: "PharmEasy Lumbar Sacro Support Belt",
+      rating: 4,
+      originalPrice: "$6.00",
+      discountedPrice: "$5.40",
+    },
+  ];
+
   return (
-    <div>
-      <div class="bg-gray-100 p-6 " style={{ fontFamily: "Parkinsans, serif", fontWeight: 400 }}>
-        <h2 class="text-3xl font-bold text-center text-green-800 mb-6">Latest products</h2>
+    <div className="py-10">
+        <div className="p-4 md:p-2" style={{ fontFamily: "Parkinsans, serif", fontWeight: 400 }}>
+      <h2 className="text-2xl md:text-4xl font-bold text-center text-green-800 mb-6 py-8">
+        Latest products
+      </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="bg-white border rounded shadow-md p-4 relative">
-            <span class="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr rounded-bl z-10">
-              -13%
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white border rounded shadow-md p-2 relative flex flex-col h-full"
+          >
+            <span className="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr rounded-bl z-10">
+              {product.discount}
             </span>
-            <img
-              src={card1}
-              alt="Product 1"
-              class="mx-auto object-contain mt-2"
-            ></img>
-            {/* <div class="flex justify-between text-center text-xs font-semibold mt-4 text-blue-900">
-        <div><div class="text-lg">507</div><div class="text-[10px]">DAYS</div></div>
-        <div><div class="text-lg">09</div><div class="text-[10px]">HRS</div></div>
-        <div><div class="text-lg">08</div><div class="text-[10px]">MIN</div></div>
-        <div><div class="text-lg text-red-600">16</div><div class="text-[10px]">SEC</div></div>
-      </div> */}
-            <h3 class="mt-4 text-sm font-medium text-blue-900">
-              Himalaya Baby Body Lotion 400 ml Pack Of 2
-            </h3>
-            <div class="flex items-center mt-2 text-yellow-400">
-              <template x-for="i in 5">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.572-.955L10 0l2.94 5.955 6.572.955-4.756 4.635 1.122 6.545z" />
-                </svg>
-              </template>
+            <div className="flex-grow flex items-center justify-center mb-4">
+              <img
+                src={product.image}
+                alt={`Product ${product.id}`}
+                className=" object-contain"
+              />
             </div>
-            <div class="mt-2 text-sm">
-              <span class="text-gray-500 line-through mr-2">$9.20</span>
-              <span class="text-blue-900 font-bold">$8</span>
+            
+            <div className="flex-grow">
+              <h3 className="text-sm font-medium text-blue-900 mb-2 line-clamp-2 min-h-[2.5rem]">
+                {product.title}
+              </h3>
+              
+              {/* <div className="flex items-center mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className={`w-4 h-4 fill-current ${i < product.rating ? "text-yellow-400" : "text-gray-300"}`}
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.572-.955L10 0l2.94 5.955 6.572.955-4.756 4.635 1.122 6.545z" />
+                  </svg>
+                ))}
+              </div> */}
+            </div>
+            
+            <div className="mt-auto">
+              <div className="text-sm">
+                <span className="text-gray-500 line-through mr-2">
+                  {product.originalPrice}
+                </span>
+                <span className="text-blue-900 font-bold">
+                  {product.discountedPrice}
+                </span>
+              </div>
             </div>
           </div>
-
-          <div class="bg-white border rounded shadow-md p-4 relative">
-            <span class="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr rounded-bl z-10">
-              -14%
-            </span>
-            <img
-              src={card2}
-              alt="Product 2"
-              class="mx-auto  object-contain mt-2"
-            ></img>
-            {/* <div class="flex justify-between text-center text-xs font-semibold mt-4 text-blue-900">
-        <div><div class="text-lg">870</div><div class="text-[10px]">DAYS</div></div>
-        <div><div class="text-lg">09</div><div class="text-[10px]">HRS</div></div>
-        <div><div class="text-lg">08</div><div class="text-[10px]">MIN</div></div>
-        <div><div class="text-lg text-red-600">16</div><div class="text-[10px]">SEC</div></div>
-      </div> */}
-            <h3 class="mt-4 text-sm font-medium text-blue-900">
-              mCaffeine Deep Moisturization Body Butter
-            </h3>
-            <div class="flex items-center mt-2 text-yellow-400">
-              <template x-for="i in 5">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.572-.955L10 0l2.94 5.955 6.572.955-4.756 4.635 1.122 6.545z" />
-                </svg>
-              </template>
-            </div>
-            <div class="mt-2 text-sm">
-              <span class="text-gray-500 line-through mr-2">$10.50</span>
-              <span class="text-blue-900 font-bold">$9</span>
-            </div>
-          </div>
-
-          <div class="bg-white border rounded shadow-md p-4 relative">
-            <span class="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr rounded-bl z-10">
-              -10%
-            </span>
-            <img
-              src="https://i.imgur.com/9k5dXlG.png"
-              alt="Product 3"
-              class="mx-auto h-40 object-contain mt-2"
-            ></img>
-            {/* <div class="flex justify-between text-center text-xs font-semibold mt-4 text-blue-900">
-        <div><div class="text-lg">637</div><div class="text-[10px]">DAYS</div></div>
-        <div><div class="text-lg">09</div><div class="text-[10px]">HRS</div></div>
-        <div><div class="text-lg">08</div><div class="text-[10px]">MIN</div></div>
-        <div><div class="text-lg text-red-600">16</div><div class="text-[10px]">SEC</div></div>
-      </div> */}
-            <h3 class="mt-4 text-sm font-medium text-blue-900">
-              Liveasy Diabetic Protein - Sugar Management
-            </h3>
-            <div class="flex items-center mt-2 text-yellow-400">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path d="..." />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path d="..." />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path d="..." />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path d="..." />
-              </svg>
-              <svg
-                class="w-4 h-4 fill-current text-gray-300"
-                viewBox="0 0 20 20"
-              >
-                <path d="..." />
-              </svg>
-            </div>
-            <div class="mt-2 text-sm">
-              <span class="text-gray-500 line-through mr-2">$5</span>
-              <span class="text-blue-900 font-bold">$4.50</span>
-            </div>
-          </div>
-
-          <div class="bg-white border rounded shadow-md p-4 relative">
-            <span class="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-tr rounded-bl z-10">
-              -10%
-            </span>
-            <img
-              src="https://i.imgur.com/BKxyUbp.png"
-              alt="Product 4"
-              class="mx-auto h-40 object-contain mt-2"
-            ></img>
-            {/* <div class="flex justify-between text-center text-xs font-semibold mt-4 text-blue-900">
-        <div><div class="text-lg">631</div><div class="text-[10px]">DAYS</div></div>
-        <div><div class="text-lg">09</div><div class="text-[10px]">HRS</div></div>
-        <div><div class="text-lg">08</div><div class="text-[10px]">MIN</div></div>
-        <div><div class="text-lg text-red-600">16</div><div class="text-[10px]">SEC</div></div>
-      </div> */}
-            <h3 class="mt-4 text-sm font-medium text-blue-900">
-              PharmEasy Lumbar Sacro Support Belt
-            </h3>
-            <div class="flex items-center mt-2 text-yellow-400">
-              <template x-for="i in 4">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path d="..." />
-                </svg>
-              </template>
-              <svg
-                class="w-4 h-4 fill-current text-gray-300"
-                viewBox="0 0 20 20"
-              >
-                <path d="..." />
-              </svg>
-            </div>
-            <div class="mt-2 text-sm">
-              <span class="text-gray-500 line-through mr-2">$6.00</span>
-              <span class="text-blue-900 font-bold">$5.40</span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 };
