@@ -22,28 +22,28 @@ const PopularCategories = () => {
       id: 3,
       title: "Oral care",
       count: "5 Products",
-      image: "https://via.placeholder.com/80x120",
+      image: car2,
       bgColor: "bg-[#F4FAF9]"
     },
     {
       id: 4,
       title: "Personal Care",
       count: "11 Products",
-      image: "https://via.placeholder.com/80x120",
+      image: car2,
       bgColor: "bg-[#EEF5FF]"
     },
     {
       id: 5,
       title: "Face Mask",
       count: "3 Products",
-      image: "https://via.placeholder.com/80x120",
+      image: car2,
       bgColor: "bg-[#FFF2F4]"
     },
     {
       id: 6,
       title: "Baby Care",
       count: "8 Products",
-      image: "https://via.placeholder.com/80x120",
+      image: car2,
       bgColor: "bg-[#FFF9ED]"
     }
   ];
